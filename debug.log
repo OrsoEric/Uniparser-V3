@@ -1,0 +1,432 @@
+Start Debug!
+-->> "main" |
+	OrangeBot Projects
+	-->> "test_bench" | in: 0
+		-->> "born_parser" | dictionary: 004bf004
+			-->> "parser_cmd_chk" | dictionary: 004bf004
+				scanned 16 char in the dictionary
+			<<-- "parser_cmd_chk" |
+			MALLOC: 28 bytes | adr: 003dbc40
+		<<-- "born_parser" | adr: 003dbc40
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >56<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >V<
+				packet adr: 00000000
+				PARSER_IDLE. parser_tmp.index: 208
+				-->> "parser_search_first" | cmd: 004bf004, data: 56, num_hit: 0028fea4
+					index: 0, data: 1
+					skipped until terminator: index: 2, cmd: 0
+					index: 3, data: 2
+					skipped until terminator: index: 5, cmd: 0
+					index: 6, data: a
+					skipped until terminator: index: 14, cmd: 0
+					double terminator found. Dictionary end
+					MALLOC: 1 bytes | adr: 003db368
+					index: 0, data: 1
+					skipped until terminator: index: 2, cmd: 0
+					index: 3, data: 2
+					skipped until terminator: index: 5, cmd: 0
+					index: 6, data: a
+					skipped until terminator: index: 14, cmd: 0
+					double terminator found. Dictionary end
+				<<-- "parser_search_first" | num_hit: 1 1, ret: 003db368
+				At least on valid entry was found! | Another ID next
+				Destruction of argument
+				packet adr: 00000000
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >52<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >R<
+				packet adr: 00000000
+				PARSER_ID. parser_tmp.index: 2
+				data is number or letter: R
+				current id_entries: 1, address: 3db368
+				MALLOC: 1 bytes | adr: 003db378
+				FREE: adr: 003db368
+				surviving id_entries: 1, address: 3db378
+				at least one parser_tmp.id_index entry survived: 				Argument next
+				Adding a new argument to parser structure
+				-->> "born_packet" |
+					MALLOC: 8 bytes | adr: 003db368
+				<<-- "born_packet" | adr: 003db368
+				-->> "packet_add_arg" | adr: 003db368 | arg: >d<
+					arg_num: 0, arg_len: 0
+					MALLOC: 2 bytes | adr: 003db388
+					arg_num: 1, arg_len: 2
+				<<-- "packet_add_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >2b<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >+<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 4
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 1
+				<<-- "packet_calc_arg_index" | arg_index: 1
+				arg_index: 0, arg_descriptor: d, arg_len: 2, arg index: 1, arg: 0
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >31<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >1<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 4
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 1
+				<<-- "packet_calc_arg_index" | arg_index: 1
+				arg_index: 0, arg_descriptor: d, arg_len: 2, arg index: 1, arg: 0
+				-->> "parser_calc_arg" | arg adr: 003db389, arg_descriptor: 64, chiper: 1
+					arg: 0,new arg: 1
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >30<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >0<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 4
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 1
+				<<-- "packet_calc_arg_index" | arg_index: 1
+				arg_index: 0, arg_descriptor: d, arg_len: 2, arg index: 1, arg: 1
+				-->> "parser_calc_arg" | arg adr: 003db389, arg_descriptor: 64, chiper: 0
+					arg: 1,new arg: 10
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >30<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >0<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 4
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 1
+				<<-- "packet_calc_arg_index" | arg_index: 1
+				arg_index: 0, arg_descriptor: d, arg_len: 2, arg index: 1, arg: a
+				-->> "parser_calc_arg" | arg adr: 003db389, arg_descriptor: 64, chiper: 0
+					arg: 10,new arg: 100
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >4c<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >L<
+				packet adr: 003db368
+				PARSER_ID. parser_tmp.index: 4
+				data is number or letter: L
+				current id_entries: 1, address: 3db378
+				MALLOC: 1 bytes | adr: 003db398
+				FREE: adr: 003db378
+				surviving id_entries: 1, address: 3db398
+				at least one parser_tmp.id_index entry survived: 				Argument next
+				Adding a new argument to parser structure
+				-->> "packet_add_arg" | adr: 003db368 | arg: >d<
+					arg_num: 1, arg_len: 2
+					REALLOC: old adr: 003db378, 4 bytes | adr: 003db378
+					Transfer 1 to 2
+					arg_num: 2, arg_len: 4
+				<<-- "packet_add_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >2b<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >+<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 7
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+				arg_index: 1, arg_descriptor: d, arg_len: 4, arg index: 3, arg: 0
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >31<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >1<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 7
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+				arg_index: 1, arg_descriptor: d, arg_len: 4, arg index: 3, arg: 0
+				-->> "parser_calc_arg" | arg adr: 003db37b, arg_descriptor: 64, chiper: 1
+					arg: 0,new arg: 1
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >30<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >0<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 7
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+				arg_index: 1, arg_descriptor: d, arg_len: 4, arg index: 3, arg: 1
+				-->> "parser_calc_arg" | arg adr: 003db37b, arg_descriptor: 64, chiper: 0
+					arg: 1,new arg: 10
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >30<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >0<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 7
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+				arg_index: 1, arg_descriptor: d, arg_len: 4, arg index: 3, arg: a
+				-->> "parser_calc_arg" | arg adr: 003db37b, arg_descriptor: 64, chiper: 0
+					arg: 10,new arg: 100
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >0<
+			-->> "parser_exe" | parser: 003dbc40 | din: >0<
+				packet adr: 003db368
+				Terminator. Current id_index entries: 1
+				Terminator after ARG
+				cmd of entry: 0 is 0
+				Existing packet. command had arguments
+				Valid Command decoded! ID: 10 10, adr: 3db368
+				FSM RESET
+				FREE: adr 003db398
+				packet adr: 00000000
+			<<-- "parser_exe" | ret: 003db368
+			-->> "packet_get_s8" | adr: 003db368, index: 0
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 2
+				<<-- "packet_calc_arg_index" | arg_index: 2
+			<<-- "packet_get_s8" | ret: 100
+			Right engine: 100
+			-->> "packet_get_s8" | adr: 003db368, index: 1
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+			<<-- "packet_get_s8" | ret: 100
+			 Left engine: 100
+			-->> "bury_packet" | adr: 003db368
+				FREE: adr: 003db378
+				FREE: adr: 003db368
+			<<-- "bury_packet" |
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >56<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >V<
+				packet adr: 00000000
+				PARSER_IDLE. parser_tmp.index: 0
+				-->> "parser_search_first" | cmd: 004bf004, data: 56, num_hit: 0028fea4
+					index: 0, data: 1
+					skipped until terminator: index: 2, cmd: 0
+					index: 3, data: 2
+					skipped until terminator: index: 5, cmd: 0
+					index: 6, data: a
+					skipped until terminator: index: 14, cmd: 0
+					double terminator found. Dictionary end
+					MALLOC: 1 bytes | adr: 003db368
+					index: 0, data: 1
+					skipped until terminator: index: 2, cmd: 0
+					index: 3, data: 2
+					skipped until terminator: index: 5, cmd: 0
+					index: 6, data: a
+					skipped until terminator: index: 14, cmd: 0
+					double terminator found. Dictionary end
+				<<-- "parser_search_first" | num_hit: 1 1, ret: 003db368
+				At least on valid entry was found! | Another ID next
+				Destruction of argument
+				packet adr: 00000000
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >52<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >R<
+				packet adr: 00000000
+				PARSER_ID. parser_tmp.index: 2
+				data is number or letter: R
+				current id_entries: 1, address: 3db368
+				MALLOC: 1 bytes | adr: 003db378
+				FREE: adr: 003db368
+				surviving id_entries: 1, address: 3db378
+				at least one parser_tmp.id_index entry survived: 				Argument next
+				Adding a new argument to parser structure
+				-->> "born_packet" |
+					MALLOC: 8 bytes | adr: 003db368
+				<<-- "born_packet" | adr: 003db368
+				-->> "packet_add_arg" | adr: 003db368 | arg: >d<
+					arg_num: 0, arg_len: 0
+					MALLOC: 2 bytes | adr: 003db398
+					arg_num: 1, arg_len: 2
+				<<-- "packet_add_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >2b<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >+<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 4
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 1
+				<<-- "packet_calc_arg_index" | arg_index: 1
+				arg_index: 0, arg_descriptor: d, arg_len: 2, arg index: 1, arg: 0
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >31<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >1<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 4
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 1
+				<<-- "packet_calc_arg_index" | arg_index: 1
+				arg_index: 0, arg_descriptor: d, arg_len: 2, arg index: 1, arg: 0
+				-->> "parser_calc_arg" | arg adr: 003db399, arg_descriptor: 64, chiper: 1
+					arg: 0,new arg: 1
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >30<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >0<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 4
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 1
+				<<-- "packet_calc_arg_index" | arg_index: 1
+				arg_index: 0, arg_descriptor: d, arg_len: 2, arg index: 1, arg: 1
+				-->> "parser_calc_arg" | arg adr: 003db399, arg_descriptor: 64, chiper: 0
+					arg: 1,new arg: 10
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >30<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >0<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 4
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 1
+				<<-- "packet_calc_arg_index" | arg_index: 1
+				arg_index: 0, arg_descriptor: d, arg_len: 2, arg index: 1, arg: a
+				-->> "parser_calc_arg" | arg adr: 003db399, arg_descriptor: 64, chiper: 0
+					arg: 10,new arg: 100
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >4c<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >L<
+				packet adr: 003db368
+				PARSER_ID. parser_tmp.index: 4
+				data is number or letter: L
+				current id_entries: 1, address: 3db378
+				MALLOC: 1 bytes | adr: 003db388
+				FREE: adr: 003db378
+				surviving id_entries: 1, address: 3db388
+				at least one parser_tmp.id_index entry survived: 				Argument next
+				Adding a new argument to parser structure
+				-->> "packet_add_arg" | adr: 003db368 | arg: >d<
+					arg_num: 1, arg_len: 2
+					REALLOC: old adr: 003db378, 4 bytes | adr: 003db378
+					Transfer 1 to 2
+					arg_num: 2, arg_len: 4
+				<<-- "packet_add_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >2b<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >+<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 7
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+				arg_index: 1, arg_descriptor: d, arg_len: 4, arg index: 3, arg: 0
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >31<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >1<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 7
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+				arg_index: 1, arg_descriptor: d, arg_len: 4, arg index: 3, arg: 0
+				-->> "parser_calc_arg" | arg adr: 003db37b, arg_descriptor: 64, chiper: 1
+					arg: 0,new arg: 1
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >30<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >0<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 7
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+				arg_index: 1, arg_descriptor: d, arg_len: 4, arg index: 3, arg: 1
+				-->> "parser_calc_arg" | arg adr: 003db37b, arg_descriptor: 64, chiper: 0
+					arg: 1,new arg: 10
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >30<
+			-->> "parser_exe" | parser: 003dbc40 | din is a char: >0<
+				packet adr: 003db368
+				PARSER_ARG. parser_tmp.index: 7
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+				arg_index: 1, arg_descriptor: d, arg_len: 4, arg index: 3, arg: a
+				-->> "parser_calc_arg" | arg adr: 003db37b, arg_descriptor: 64, chiper: 0
+					arg: 10,new arg: 100
+				<<-- "parser_calc_arg" |
+				packet adr: 003db368
+			<<-- "parser_exe" | ret: 00000000
+		<<-- "feed_data_to_parser" |
+		-->> "feed_data_to_parser" | parser: 003dbc40 | data: >0<
+			-->> "parser_exe" | parser: 003dbc40 | din: >0<
+				packet adr: 003db368
+				Terminator. Current id_index entries: 1
+				Terminator after ARG
+				cmd of entry: 0 is 0
+				Existing packet. command had arguments
+				Valid Command decoded! ID: 10 10, adr: 3db368
+				FSM RESET
+				FREE: adr 003db388
+				packet adr: 00000000
+			<<-- "parser_exe" | ret: 003db368
+			-->> "packet_get_s8" | adr: 003db368, index: 0
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 0
+					arg_index: 2
+				<<-- "packet_calc_arg_index" | arg_index: 2
+			<<-- "packet_get_s8" | ret: 100
+			Right engine: 100
+			-->> "packet_get_s8" | adr: 003db368, index: 1
+				-->> "packet_calc_arg_index" | adr: 003db368, index: 1
+					arg0, arg_descriptor: d: 					1B
+					arg_index: 3
+				<<-- "packet_calc_arg_index" | arg_index: 3
+			<<-- "packet_get_s8" | ret: 100
+			 Left engine: 100
+			-->> "bury_packet" | adr: 003db368
+				FREE: adr: 003db378
+				FREE: adr: 003db368
+			<<-- "bury_packet" |
+		<<-- "feed_data_to_parser" |
+		-->> "bury_parser" | adr: 003dbc40
+		<<-- "bury_parser" |
+	<<-- "test_bench" | out: 0
+<<-- "main" |
+
+Debug has Ended!
